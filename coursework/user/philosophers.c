@@ -208,6 +208,8 @@ void philosopher(int readfd, int writefd, int ID)
         giveleftfork(readfd, writefd, ID);
         yield();
         think(ID);
+        // comment exit(EXIT_SUCCESS); out so that the program will run forever;
+        // otherwise it will stop and only the waiter will run once all the philosophers finished thinking;
         exit(EXIT_SUCCESS);
     }
 }
